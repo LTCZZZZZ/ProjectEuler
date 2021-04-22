@@ -63,6 +63,7 @@ def func2(n):
                             break
                     p += 2
                 # 这里若执行完全部循环还没yield，则表示剩余的因子就是素数
+                # 也可能上面的while循环在某次yield获得新的now_n后不满足条件，一次都没有执行，此时也能得出now_n是素数或1
                 return now_n
 
     factors = []
@@ -77,8 +78,9 @@ def func2(n):
             try:
                 a = prime_generator.send(n)
                 sqrt_n = round(math.sqrt(n))
-            except StopIteration as e:  # 此时n即为素因子
-                factors.append(e.value)
+            except StopIteration as e:  # 此时n即为素因子或1
+                if e.value != 1:
+                    factors.append(e.value)
                 break
 
 
