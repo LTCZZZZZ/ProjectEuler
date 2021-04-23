@@ -1,5 +1,7 @@
 import math
 
+# 另外的解法：对第n个素数p有ln(nln(n))−1<p/n<ln(nln(n))，参见https://en.wikipedia.org/wiki/Prime-counting_function
+# 得到上界后用挨拉托色尼筛法
 
 
 def prime_list(n):
