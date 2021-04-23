@@ -1,7 +1,5 @@
 import math
 
-m = 600851475143
-
 
 def prime_list(n):
     # 最大不超过n的素数列表
@@ -30,8 +28,8 @@ def func1():
         print(f'{m}是质数')
 
 
-def func2(n):
-    # 这是一个素因子分解函数
+def get_factors(n):
+    # 这是一个素因子分解函数，
     # 思想是，从两边出发，首先依次取l中的元素a看是否为m的因子，
     # 类似于素因子分解的思想，如果a是，命m=m/a，再测试a是否为m的因子，直到不是为止，
     # 此时进入下一个循环，测试b；并且，只有当l中的元素被耗尽时，才更新l
@@ -82,11 +80,17 @@ def func2(n):
                 if e.value != 1:
                     factors.append(e.value)
                 break
-
+    else:
+        # 只有在n<=6或n为2的某次幂时会执行到此处，n>=7时都由StopIteration后退出循环
+        if n != 1:
+            factors.append(n)
 
     print(l)
     print(factors)
+    return factors
 
 
-# func1()
-func2(m)  # 测试表明func2比func1快很多倍
+if __name__ == '__main__':
+    m = 600851475143
+    # func1()
+    get_factors(m)  # 测试表明func2比func1快很多倍
