@@ -27,3 +27,7 @@ print(max(d, key=d.get))
 print(np.ones([3, 2]))
 print(list(itertools.product(range(3), repeat=2)))
 print(comb(6, 3), perm(6, 3, exact=True))
+
+t = np.pad([6, 7], [1, 2], 'constant', constant_values=[0, 0])
+print(t)
+
