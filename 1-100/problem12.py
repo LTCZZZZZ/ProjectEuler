@@ -131,5 +131,6 @@ def func2():
         i += 1
 
 
-# func1()
-func2()  # 运行显示func2比func1快了N倍不止
+if __name__ == '__main__':
+    # func1()
+    func2()  # 运行显示func2比func1快了N倍不止

@@ -32,7 +32,7 @@ def handle(text):
 
     def handle2(l):
         a = np.array(l.split(' '), dtype=int)
-        return np.pad(a, [0, n - len(a)], mode='constant')
+        return np.pad(a, [0, n - len(a)], mode='constant')  # 用0补全边界
 
     return np.array(list(map(handle2, s)))
 
