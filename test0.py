@@ -5,7 +5,6 @@ import itertools
 from scipy.special import comb, perm  # 排列组合函数
 from functools import lru_cache  # 缓存机制
 
-
 a = Counter(range(1, 6))
 a[1] -= 1
 print(a)
@@ -35,3 +34,10 @@ print(t)
 print(np.prod(range(1, 9)))  # 连乘
 print(sum([]))
 
+
+print(comb(6, 3, exact=True))
+# 重复组合数，一次不定方程 x1+x2+...+xn=r 的任一组非负整数解就对应着一个r个元素的重复组合。
+print(comb(6, 3, exact=True, repetition=True))  # 故结果等于 comb(6+3-1, 3)
+print(comb(6 + 3 - 1, 3, exact=True))
+
+print(comb(2000, 20))
